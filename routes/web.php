@@ -18,6 +18,8 @@ $router->get('/dashboard/admin', 'HomeController@dashboard');
 $router->get('/dashboard/doctor', 'DoctorController@dashboard');
 $router->get('/dashboard/patient', 'PatientController@dashboard');
 $router->post('/dashboard/book', 'PatientController@bookAppointment');
+$router->get('/api/doctors', 'ApiController@getDoctors');
+$router->get('/api/departments', 'ApiController@getDepartments');
 
 $router->dispatch();
 ?>
