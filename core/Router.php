@@ -1,31 +1,32 @@
 <?php
-namespace App\Core;
+  use App\Core\Router;
 
-class Router {
-    protected $routes = [];
+  $router = new Router();
 
-    public function get($path, $handler) {
-        $this->routes['GET'][$path] = $handler;
-    }
+  // Public routes
+  $router->get('/', 'HomeController@index');
+  $router->get('about', 'HomeController@about');
+  $router->get('services', 'HomeController@services');
+  $router->get('doctors', 'HomeController@doctors');
+  $router->get('contact', 'HomeController@contact');
+  $router->post('contact/submit', 'HomeController@contactSubmit');
 
-    public function post($path, $handler) {
-        $this->routes['POST'][$path] = $handler;
-    }
+  // Auth routes
+  $router->get('login', 'Auth\LoginController@showLoginForm');
+  $router->post('login', 'Auth\LoginController@login');
+  $router->get('register', 'Auth\RegisterController@showRegisterForm');
+  $router->post('register', 'Auth\RegisterController@register');
+  $router->get('logout', 'Auth\LoginController@logout');
 
-    public function dispatch() {
-        $method = $_SERVER['REQUEST_METHOD'];
-        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $uri = rtrim($uri, '/');
-        if (isset($this->routes[$method][$uri])) {
-            $handler = $this->routes[$method][$uri];
-            list($controller, $action) = explode('@', $handler);
-            $controller = "App\\Controllers\\$controller";
-            $controllerInstance = new $controller();
-            $controllerInstance->$action();
-        } else {
-            http_response_code(404);
-            echo '404 Not Found';
-        }
-    }
-}
-?>
+  // Dashboard routes
+  $router->get('dashboard/admin', 'HomeController@dashboard');
+  $router->get('dashboard/doctor', 'DoctorController@dashboard');
+  $router->get('dashboard/patient', 'PatientController@dashboard');
+  $router->post('dashboard/book', 'PatientController@bookAppointment');
+
+  // API routes
+  $router->get('api/doctors', 'ApiController@getDoctors');
+  $router->get('api/departments', 'ApiController@getDepartments');
+
+  $router->dispatch();
+  ?>
