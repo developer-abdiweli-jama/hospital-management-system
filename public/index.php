@@ -13,5 +13,7 @@ $router = new App\Core\Router();
 // Load routes
 require __DIR__.'/../routes/web.php';
 
+echo "PHP is working!";
+exit;
 // Dispatch the request
 $router->dispatch();

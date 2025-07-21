@@ -1,34 +1,49 @@
 <?php
-use App\Core\Router;
+namespace App\Core;
 
-$router->get('/', function() {
-    echo "Welcome to the Hospital Management System!";
-});
+class Router {
+    protected $routes = [];
 
-  // Public routes
-  $router->get('/', 'HomeController@index');
-  $router->get('about', 'HomeController@about');
-  $router->get('services', 'HomeController@services');
-  $router->get('doctors', 'HomeController@doctors');
-  $router->get('contact', 'HomeController@contact');
-  $router->post('contact/submit', 'HomeController@contactSubmit');
+    public function get($uri, $handler) {
+        $this->routes['GET'][$uri] = $handler;
+    }
 
-  // Auth routes
-  $router->get('login', 'Auth\LoginController@showLoginForm');
-  $router->post('login', 'Auth\LoginController@login');
-  $router->get('register', 'Auth\RegisterController@showRegisterForm');
-  $router->post('register', 'Auth\RegisterController@register');
-  $router->get('logout', 'Auth\LoginController@logout');
+    public function post($uri, $handler) {
+        $this->routes['POST'][$uri] = $handler;
+    }
 
-  // Dashboard routes
-  $router->get('dashboard/admin', 'HomeController@dashboard');
-  $router->get('dashboard/doctor', 'DoctorController@dashboard');
-  $router->get('dashboard/patient', 'PatientController@dashboard');
-  $router->post('dashboard/book', 'PatientController@bookAppointment');
+    public function dispatch() {
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $method = $_SERVER['REQUEST_METHOD'];
 
-  // API routes
-  $router->get('api/doctors', 'ApiController@getDoctors');
-  $router->get('api/departments', 'ApiController@getDepartments');
+        foreach ($this->routes[$method] as $route => $handler) {
+            if ($route === $uri) {
+                return $this->callHandler($handler);
+            }
+        }
 
-  $router->dispatch();
-  ?>
+        http_response_code(404);
+        echo '404 Not Found';
+    }
+
+    protected function callHandler($handler) {
+        if (is_callable($handler)) {
+            return $handler();
+        }
+        
+        if (is_string($handler)) {
+            list($controller, $method) = explode('@', $handler);
+            $controller = "App\\Controllers\\{$controller}";
+            
+            if (class_exists($controller)) {
+                $controllerInstance = new $controller;
+                
+                if (method_exists($controllerInstance, $method)) {
+                    return $controllerInstance->$method();
+                }
+            }
+        }
+
+        throw new \Exception("Invalid handler");
+    }
+}
