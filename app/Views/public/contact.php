@@ -77,18 +77,34 @@
 
     <!-- Contact Form Section -->
     <section id="contact-form" class="container mx-auto my-12 p-4">
-        <h2 class="section-title">Send Us a Message</h2>
-        <form class="bg-white p-6 rounded-lg shadow-md" method="POST" action="/contact/submit">
-            <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <?php require_once __DIR__ . '/../components/alert.php'; ?>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="section-title">Send Us a Message</h2>
+            <form method="POST" action="/contact/submit" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
                 <input type="text" placeholder="Full Name" class="p-2 border rounded custom-input" name="name" required>
                 <input type="email" placeholder="Email" class="p-2 border rounded custom-input" name="email" required>
                 <input type="tel" placeholder="Phone" class="p-2 border rounded custom-input" name="phone" required>
+                <select name="department_id" class="p-2 border rounded custom-select">
+                    <option value="">Select Department (Optional)</option>
+                    <?php
+                    $config = require APP_PATH . 'config/database.php';
+                    $db = new PDO(
+                        "mysql:host={$config['host']};dbname={$config['database']};charset={$config['charset']}",
+                        $config['user'],
+                        $config['password']
+                    );
+                    $stmt = $db->query("SELECT id, name FROM departments");
+                    while ($dept = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<option value='{$dept['id']}'>" . htmlspecialchars($dept['name']) . "</option>";
+                    }
+                    ?>
+                </select>
                 <input type="text" placeholder="Subject" class="p-2 border rounded custom-input" name="subject" required>
                 <textarea placeholder="Your Message" class="p-2 border rounded custom-input col-span-2" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold mt-4 custom-button">Submit</button>
-        </form>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold mt-4 custom-button col-span-2">Submit</button>
+            </form>
+        </div>
     </section>
 
     <!-- Contact Information Section -->
