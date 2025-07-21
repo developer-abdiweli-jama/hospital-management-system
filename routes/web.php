@@ -1,7 +1,9 @@
 <?php
 use App\Core\Router;
 
-$router = new Router();
+$router->get('/', function() {
+    echo "Welcome to the Hospital Management System!";
+});
 
 // Public routes
 $router->get('/', 'HomeController@index');
