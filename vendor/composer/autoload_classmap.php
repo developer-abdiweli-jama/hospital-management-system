@@ -6,5 +6,20 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\ApiController' => $baseDir . '/app/Controllers/ApiController.php',
+    'App\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Controllers/Auth/LoginController.php',
+    'App\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Controllers/Auth/RegisterController.php',
+    'App\\Controllers\\DoctorController' => $baseDir . '/app/Controllers/DoctorController.php',
+    'App\\Controllers\\HomeController' => $baseDir . '/app/Controllers/HomeController.php',
+    'App\\Controllers\\PatientController' => $baseDir . '/app/Controllers/PatientController.php',
+    'App\\Core\\Auth' => $baseDir . '/app/Core/Auth.php',
+    'App\\Core\\Controller' => $baseDir . '/app/Core/Controller.php',
+    'App\\Core\\Exceptions\\Handler' => $baseDir . '/app/Core/Exceptions/Handler.php',
+    'App\\Core\\Model' => $baseDir . '/app/Core/Model.php',
+    'App\\Core\\Request' => $baseDir . '/app/Core/Request.php',
+    'App\\Core\\Router' => $baseDir . '/app/Core/Router.php',
+    'App\\Models\\Appointment' => $baseDir . '/app/Models/Appointment.php',
+    'App\\Models\\Doctor' => $baseDir . '/app/Models/Doctor.php',
+    'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

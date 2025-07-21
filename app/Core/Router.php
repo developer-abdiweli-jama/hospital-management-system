@@ -1,32 +1,48 @@
 <?php
-  use App\Core\Router;
+namespace App\Core;
 
-  $router = new Router();
+class Router {
+    protected $routes = [];
 
-  // Public routes
-  $router->get('/', 'HomeController@index');
-  $router->get('about', 'HomeController@about');
-  $router->get('services', 'HomeController@services');
-  $router->get('doctors', 'HomeController@doctors');
-  $router->get('contact', 'HomeController@contact');
-  $router->post('contact/submit', 'HomeController@contactSubmit');
+    public function __construct() {
+        // Constructor can initialize default routes if needed
+    }
 
-  // Auth routes
-  $router->get('login', 'Auth\LoginController@showLoginForm');
-  $router->post('login', 'Auth\LoginController@login');
-  $router->get('register', 'Auth\RegisterController@showRegisterForm');
-  $router->post('register', 'Auth\RegisterController@register');
-  $router->get('logout', 'Auth\LoginController@logout');
+    public function get($uri, $controller) {
+        $this->routes['GET'][$uri] = $controller;
+    }
 
-  // Dashboard routes
-  $router->get('dashboard/admin', 'HomeController@dashboard');
-  $router->get('dashboard/doctor', 'DoctorController@dashboard');
-  $router->get('dashboard/patient', 'PatientController@dashboard');
-  $router->post('dashboard/book', 'PatientController@bookAppointment');
+    public function post($uri, $controller) {
+        $this->routes['POST'][$uri] = $controller;
+    }
 
-  // API routes
-  $router->get('api/doctors', 'ApiController@getDoctors');
-  $router->get('api/departments', 'ApiController@getDepartments');
+    public function dispatch() {
+        $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+        $method = $_SERVER['REQUEST_METHOD'];
 
-  $router->dispatch();
-  ?>
+        if (array_key_exists($uri, $this->routes[$method])) {
+            $this->callAction(
+                ...explode('@', $this->routes[$method][$uri])
+            );
+        } else {
+            http_response_code(404);
+            echo "404 Not Found";
+        }
+    }
+
+    protected function callAction($controller, $action) {
+        $controller = "App\\Controllers\\{$controller}";
+        
+        if (!class_exists($controller)) {
+            throw new \Exception("Controller {$controller} not found");
+        }
+
+        $controllerInstance = new $controller();
+
+        if (!method_exists($controllerInstance, $action)) {
+            throw new \Exception("Method {$action} not found in {$controller}");
+        }
+
+        return $controllerInstance->$action();
+    }
+}

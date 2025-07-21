@@ -1,6 +1,7 @@
 {
     "name": "abdiweli-jama/hospital-management-system",
     "description": "A hospital management system built with PHP and MySQL",
+    "type": "project",
     "autoload": {
         "psr-4": {
             "App\\": "app/"
@@ -8,5 +9,8 @@
     },
     "require": {
         "php": ">=7.4"
+    },
+    "config": {
+        "optimize-autoloader": true
     }
 }

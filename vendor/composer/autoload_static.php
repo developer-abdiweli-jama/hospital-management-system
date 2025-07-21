@@ -21,6 +21,21 @@ class ComposerStaticInitf639e74e59ac6722506b0e6a3178fe59
     );
 
     public static $classMap = array (
+        'App\\Controllers\\ApiController' => __DIR__ . '/../..' . '/app/Controllers/ApiController.php',
+        'App\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Controllers/Auth/LoginController.php',
+        'App\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Controllers/Auth/RegisterController.php',
+        'App\\Controllers\\DoctorController' => __DIR__ . '/../..' . '/app/Controllers/DoctorController.php',
+        'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Controllers/HomeController.php',
+        'App\\Controllers\\PatientController' => __DIR__ . '/../..' . '/app/Controllers/PatientController.php',
+        'App\\Core\\Auth' => __DIR__ . '/../..' . '/app/Core/Auth.php',
+        'App\\Core\\Controller' => __DIR__ . '/../..' . '/app/Core/Controller.php',
+        'App\\Core\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Core/Exceptions/Handler.php',
+        'App\\Core\\Model' => __DIR__ . '/../..' . '/app/Core/Model.php',
+        'App\\Core\\Request' => __DIR__ . '/../..' . '/app/Core/Request.php',
+        'App\\Core\\Router' => __DIR__ . '/../..' . '/app/Core/Router.php',
+        'App\\Models\\Appointment' => __DIR__ . '/../..' . '/app/Models/Appointment.php',
+        'App\\Models\\Doctor' => __DIR__ . '/../..' . '/app/Models/Doctor.php',
+        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
