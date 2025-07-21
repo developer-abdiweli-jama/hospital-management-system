@@ -89,12 +89,12 @@ CREATE TABLE patient_records (
 );
 
 -- Sample data
-INSERT INTO users (full_name, email, password, role, license_number, phone, gender, dob) VALUES
-('Admin User', 'admin@hospital.com', '$2y$10$K9z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z', 'Admin', NULL, '1234567890', 'Male', '1980-01-01'),
-('Dr. Afework Yohannes', 'afework@hospital.com', '$2y$10$K9z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z', 'Doctor', 'LIC12345', '9876543210', 'Male', '1975-06-15'),
-('Drs. Hanna Yohanes', 'hanna@hospital.com', '$2y$10$K9z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z', 'Doctor', 'LIC67890', '8765432109', 'Female', '1982-03-22'),
-('Patient User', 'patient@hospital.com', '$2y$10$K9z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z5z', 'Patient', NULL, '7654321098', 'Female', '1990-11-10');
-
+INSERT INTO users (name, email, password, role) VALUES
+('Admin User', 'admin@hospital.com', '$2y$10$.2K8vlmNrU4ZEvTTEkEjmuOyO14elCyuxCuqIcCvWWPZzAjTNTu96', 'admin'),
+('Dr. Afework Yohannes', 'afework@hospital.com', '$2y$10$owgPLbDWYkd/iX/80whNvegPLhYTOco4uibRwQxAOz4i2eTdJs3eq', 'doctor'),
+('Dr. Hanna Kebede', 'hanna@hospital.com', '$2y$10$ZddYSIUzWSXoXbPb7V6EO.r6B2J83XpPAQBBNXNFlFHxGcz3JnyCu', 'doctor'),
+('Patient User', 'patient@hospital.com', '$2y$10$/6OQ6OtaXLXTKlyhhwGFJOLUOnD68gnK.KriYcYf1JGI98318BBm6', 'patient');
+   
 INSERT INTO departments (name) VALUES
 ('Neurology'),
 ('Obstetrics and Gynecology'),
@@ -104,3 +104,7 @@ INSERT INTO departments (name) VALUES
 INSERT INTO doctors (user_id, name, specialty, department_id) VALUES
 (2, 'Dr. Afework Yohannes', 'Neurologist', 1),
 (3, 'Drs. Hanna Yohanes', 'Gynecologist', 2);
+
+INSERT INTO patient_records (patient_id, doctor_id, diagnosis, last_visit) VALUES
+  (4, 1, 'Migraine', '2025-01-15'),
+  (4, 2, 'Routine Checkup', '2025-02-10');

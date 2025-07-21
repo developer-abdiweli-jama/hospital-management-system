@@ -1,7 +1,8 @@
- .env
- # Ignore vendor directory
- vendor/
- # Ignore logs
- storage/logs/*
- # Ignore uploads
- storage/uploads/*
+# Ignore environment file
+     .env
+     # Ignore vendor directory
+     vendor/
+     # Ignore logs
+     storage/logs/*
+     # Ignore uploads
+     storage/uploads/*
