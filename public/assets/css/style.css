@@ -201,46 +201,46 @@
 }
 
 /* Dashboard-specific styles */
-aside {
-    background: #1E3A8A; /* Matches bg-blue-900 */
-    color: white;
-    min-height: 100vh;
-}
-aside ul li a {
-    display: block;
-    padding: 10px 0;
-    transition: color 0.3s;
-}
-aside ul li a:hover {
-    color: #93C5FD; /* Matches hover:text-blue-300 */
-}
-main.ml-64 {
-    margin-left: 16rem; /* Matches sidebar width */
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-table th, table td {
-    padding: 12px;
-    border: 1px solid #E5E7EB; /* Matches Tailwind's gray-200 */
-}
-table th {
-    background: #DBEAFE; /* Matches bg-blue-100 */
-    font-weight: 600;
-}
-table tr:nth-child(even) {
-    background: #F9FAFB; /* Matches bg-gray-50 */
-}
-.custom-input, .custom-select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #D1D5DB; /* Matches Tailwind's gray-300 */
-}
-.custom-button {
-    transition: background-color 0.3s;
-}
-.custom-button:hover {
-    background-color: #2563EB; /* Matches hover:bg-blue-700 */
-}
+  aside {
+      background: #1E3A8A;
+      color: white;
+      min-height: 100vh;
+  }
+  aside ul li a {
+      display: block;
+      padding: 10px 0;
+      transition: color 0.3s;
+  }
+  aside ul li a:hover {
+      color: #93C5FD;
+  }
+  main.ml-64 {
+      margin-left: 16rem;
+  }
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  table th, table td {
+      padding: 12px;
+      border: 1px solid #E5E7EB;
+  }
+  table th {
+      background: #DBEAFE;
+      font-weight: 600;
+  }
+  table tr:nth-child(even) {
+      background: #F9FAFB;
+  }
+  .custom-input, .custom-select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #D1D5DB;
+  }
+  .custom-button {
+      transition: background-color 0.3s;
+  }
+  .custom-button:hover {
+      background-color: #2563EB;
+  }
