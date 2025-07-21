@@ -29,5 +29,3 @@ $router->post('dashboard/book', 'PatientController@bookAppointment');
 // API routes
 $router->get('api/doctors', 'ApiController@getDoctors');
 $router->get('api/departments', 'ApiController@getDepartments');
-
-$router->dispatch();

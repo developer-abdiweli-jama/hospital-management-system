@@ -3,7 +3,7 @@
         'name' => 'abdiweli-jama/hospital-management-system',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '0876e7a1204894a5bafb16897eac81151f1290f4',
+        'reference' => '5310a9a440d76cac965edcbfe75a086490cd0a8f',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'abdiweli-jama/hospital-management-system' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '0876e7a1204894a5bafb16897eac81151f1290f4',
+            'reference' => '5310a9a440d76cac965edcbfe75a086490cd0a8f',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
