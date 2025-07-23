@@ -77,7 +77,7 @@
 
     <!-- Contact Form Section -->
     <section id="contact-form" class="container mx-auto my-12 p-4">
-        <?php require_once __DIR__ . '/../components/alert.php'; ?>
+        <?php require_once __DIR__ . '/components/alert.php'; ?>
         <div class="bg-white p-6 rounded-lg shadow-md">
             <h2 class="section-title">Send Us a Message</h2>
             <form method="POST" action="/contact/submit" class="grid grid-cols-1 sm:grid-cols-2 gap-4">

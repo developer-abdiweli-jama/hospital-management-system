@@ -4,7 +4,7 @@ namespace App\Core;
 class Controller {
     protected function render($view, $data = []) {
         extract($data);
-        require_once VIEW_PATH . $view . '.php';
+        require_once VIEW_PATH .'/'. $view . '.php';
     }
 
     protected function redirect($url) {
