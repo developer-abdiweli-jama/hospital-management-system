@@ -75,6 +75,36 @@
         </div>
     </section>
 
+            <!-- About Us Section -->
+        <section class="mb-12">
+            <h2 class="section-title text-4xl font-bold mb-6" style="color: #1F2B6C;">About Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Side: Image -->
+                <div>
+                    <img src="assets/images/Arba_Minch_General_Hospital_Front_Gate.jpg" alt="Arba Minch General Hospital Front Gate" class="rounded-lg shadow-lg w-full" loading="lazy">
+                </div>
+                <!-- Right Side: Text Content -->
+                <div class="text-gray-700">
+                    <p class="mb-4">
+                        Arba Minch General Hospital is a leading healthcare provider in the region, offering a wide
+                        range of medical services. Our mission is to deliver exceptional patient care with compassion,
+                        innovation, and excellence.
+                    </p>
+                    <p class="mb-4">
+                        Established in 1985, we have grown to become a trusted name in healthcare, serving thousands of
+                        patients annually. Our team of highly skilled doctors, nurses, and staff are dedicated to
+                        improving the health and well-being of our community.
+                    </p>
+                    <p class="mb-4">
+                        We are equipped with state-of-the-art facilities and cutting-edge technology to ensure the
+                        highest standards of medical care. From emergency services to specialized treatments, we are
+                        committed to meeting the diverse healthcare needs of our patients.
+                    </p>
+                    <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 inline-block mt-4 transition duration-300" aria-label="Learn More About Our Services">Learn More</a>
+                </div>
+            </div>
+        </section>
+
     <!-- Mission and Vision Section -->
     <section id="mission" class="container mx-auto my-12 p-4">
         <h2 class="section-title">Our Mission & Vision</h2>
@@ -111,7 +141,7 @@
                     </div>
                 </div>
                 <div class="doctor-card bg-white shadow-lg rounded-lg overflow-hidden relative group">
-                    <img src="/assets/images/Doctor3.jpg" alt="Dr. Abebe Jemal - Orthopedic Surgeon" class="w-full h-[400px] object-cover object-top" loading="lazy">
+                    <img src="/assets/images/Doctor2.png" alt="Dr. Abebe Jemal - Orthopedic Surgeon" class="w-full h-[400px] object-cover object-top" loading="lazy">
                     <div class="p-4">
                         <h3 class="text-xl font-bold">Dr. Abebe Jemal</h3>
                         <p class="text-gray-600">Orthopedic Surgeon</p>

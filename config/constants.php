@@ -1,13 +1,25 @@
 <?php
-// Only define constants if they don't exist
-defined('BASE_PATH') || define('BASE_PATH', realpath(dirname(__DIR__)));
-defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
-defined('VIEW_PATH') || define('VIEW_PATH', APP_PATH . '/Views');
-defined('STORAGE_PATH') || define('STORAGE_PATH', BASE_PATH . '/storage');
-defined('LOG_PATH') || define('LOG_PATH', STORAGE_PATH . '/logs');
+// Load environment variables from .env if available
+if (file_exists(__DIR__ . '/../.env')) {
+    $env = parse_ini_file(__DIR__ . '/../.env');
+    foreach ($env as $key => $value) {
+        putenv("$key=$value");
+    }
+}
 
-defined('BASE_URL') || define('BASE_URL', 'http://localhost/hospital-management-system/public/');
-defined('ASSET_URL') || define('ASSET_URL', BASE_URL . 'assets/');
+// Base URL for the application
+define('BASE_URL', getenv('BASE_URL') ?: 'http://localhost/hospital-management-system/public/');
 
-defined('ENVIRONMENT') || define('ENVIRONMENT', $_ENV['APP_ENV'] ?? 'production');
-defined('DEBUG_MODE') || define('DEBUG_MODE', ENVIRONMENT === 'development');
+// Paths
+define('APP_PATH', rtrim(realpath(__DIR__ . '/../app/'), '/') . '/');
+define('VIEW_PATH', APP_PATH . 'Views/');
+define('CONFIG_PATH', APP_PATH . 'config');
+define('LOG_PATH', APP_PATH . 'storage/logs/');
+
+// Database configuration
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME', getenv('DB_NAME') ?: 'hospital_management');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DEBUG_MODE', getenv('DEBUG') ?: true);
+?>
