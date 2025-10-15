@@ -90,4 +90,4 @@ Contributions are welcome! Please:
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For inquiries, contact the developer at [your.email@example.com](mailto:your.email@example.com).
+For inquiries, contact the developer at [your.email@example.com](mailto:abdiwelijamac@gmail.com).
