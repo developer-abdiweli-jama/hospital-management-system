@@ -199,11 +199,11 @@ Access at `http://localhost:8000`. Use default credentials (update in `schema.sq
 | Status | Feature                  | ETA      |
 |--------|--------------------------|----------|
 | ✅     | Core dashboards          | Live    |
-| ✅     | Appointment booking      | Dec 2025|
-| 🔄    | Email notifications      | Jan 2026|
-| 🔄    | Payment integration      | Jan 2026|
-| ⏳    | Analytics dashboard      | Feb 2026|
-| ⏳    | Mobile responsiveness    | Q1 2026 |
+| ✅     | Appointment booking      | Dec 2026|
+| 🔄    | Email notifications      | Jan 2027|
+| 🔄    | Payment integration      | Jan 2027|
+| ⏳    | Analytics dashboard      | Feb 2027|
+| ⏳    | Mobile responsiveness    | Q1 2027 |
 
 ---
 
