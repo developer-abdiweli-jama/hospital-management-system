@@ -1,93 +1,233 @@
-Hospital Management System
+# 🌑🏥 Hospital Management System
 
-A web-based application built with PHP and MySQL to manage hospital operations, including user authentication, appointment scheduling, and contact inquiries.
+<p align="center">
+  <img src="https://dummyimage.com/1200x400/0f0f0f/ffffff&text=🌑🏥+Hospital+Management+System" alt="Hospital Management System - Dark Banner" />
+</p>
 
-## Features
-- **Role-Based Access**: Admin, Doctor, and Patient dashboards with tailored functionalities.
-- **Appointment Booking**: Patients can book appointments with doctors via a dynamic form.
-- **Contact Form**: Submit inquiries saved to the database with optional department selection.
-- **Responsive Design**: Uses Tailwind CSS and Font Awesome for a modern, mobile-friendly UI.
-- **Secure Authentication**: CSRF protection and password hashing for user login/register.
-- **Patient Records**: View medical records in the patient dashboard.
-- **Scalable Database**: Supports audit logs and more.
+<p align="center">
+  <strong>A modern web-based platform built with PHP and MySQL for efficient hospital operations.</strong>
+</p>
 
-## Requirements
-- PHP >= 7.4
-- MySQL >= 5.7
-- Composer
-- Web server (e.g., Apache, Nginx, or PHP’s built-in server)
+<p align="center">
+  Role-Based Dashboards • Secure Authentication • Appointment Scheduling • Responsive UI
+</p>
 
-## Installation
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/developer-abdiweli-jama/hospital-management-system.git
-   cd hospital-management-system
-   ```
+<p align="center">
+  <a href="https://hospital-management-system.example.com"><strong>🚀 Live Demo</strong></a> •
+  <a href="#-features">Features</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-installation--setup">Install</a>
+</p>
 
-2. **Install Dependencies**:
-   ```bash
-   composer install
-   ```
+---
 
-3. **Set Up Environment**:
-   - Copy `.env.example` to `.env`:
-     ```bash
-     cp .env.example .env
-     ```
-   - Update `.env` with your database credentials:
-     ```env
-     DB_HOST=localhost
-     DB_NAME=hospital_db
-     DB_USER=root
-     DB_PASS=your_secure_password
-     DB_CHARSET=utf8mb4
-     APP_ENV=development
-     APP_DEBUG=true
-     ```
+## 🏷️ Badges
 
-4. **Import Database Schema**:
-   ```bash
-   mysql -u root -p hospital_db < sql/schema.sql
-   ```
+<p align="center">
+  <img src="https://img.shields.io/github/stars/developer-abdiweli-jama/hospital-management-system?style=for-the-badge&color=yellow&labelColor=0d0d0d" />
+  <img src="https://img.shields.io/github/forks/developer-abdiweli-jama/hospital-management-system?style=for-the-badge&color=yellow&labelColor=0d0d0d" />
+  <img src="https://img.shields.io/github/issues/developer-abdiweli-jama/hospital-management-system?style=for-the-badge&color=orange&labelColor=0d0d0d" />
+  <img src="https://img.shields.io/github/license/developer-abdiweli-jama/hospital-management-system?style=for-the-badge&color=yellow&labelColor=0d0d0d" />
+  <img src="https://img.shields.io/badge/PRs-Welcome-00ff88?style=for-the-badge&labelColor=0d0d0d" />
+</p>
 
-5. **Create Storage Directories**:
-   ```bash
-   mkdir -p storage/logs storage/uploads
-   chmod 777 storage/logs storage/uploads
-   ```
+### 🧰 Tech Versions
 
-6. **Run the Application**:
-   - Use PHP’s built-in server:
-     ```bash
-     php -S localhost:8000 -t public
-     ```
-   - Or configure Apache/Nginx to serve `public/` as the document root.
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.0-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Composer-2.7-885630?style=for-the-badge&logo=composer&logoColor=white" />
+  <img src="https://img.shields.io/badge/Font_Awesome-6-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white" />
+</p>
 
-7. **Access the Application**:
-   - Visit `http://localhost:8000`.
-   - Use sample accounts (after updating `schema.sql` with valid passwords):
-     - Admin: `admin@hospital.com` / `password123`
-     - Doctor: `afework@hospital.com` / `password123`
-     - Patient: `patient@hospital.com` / `password123`
+---
 
-## Usage
-- **Public Pages**: Navigate to Home, About, Services, Doctors, or Contact.
-- **Login/Register**: Access dashboards via `/login` or `/register`.
-- **Patient Dashboard**: Book appointments and view medical records.
-- **Doctor Dashboard**: View and manage appointments.
-- **Admin Dashboard**: Manage users and doctors.
-- **Contact Form**: Submit inquiries at `/contact`.
+## 📸 Preview
 
-## Contributing
-Contributions are welcome! Please:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/YourFeature`).
-3. Commit changes (`git commit -m 'Add YourFeature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
+<p align="center">
+  <img src="https://dummyimage.com/1600x900/0f172a/ffffff&text=Home+Page+%E2%80%94+Dark+Mode+Coming+Soon" width="100%" />
+</p>
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+<p align="center">
+  <img src="https://dummyimage.com/1600x900/0f172a/ffffff&text=Appointment+Booking+Flow" width="100%" />
+</p>
 
-## Contact
-For inquiries, contact the developer at [your.email@example.com](mailto:your.email@example.com).
+<p align="center">
+  <img src="https://dummyimage.com/1600x900/0f172a/ffffff&text=Admin+Dashboard+%E2%80%94+Manage+Users+%26+Records" width="100%" />
+</p>
+
+> ⚡ Real screenshots and GIFs will be added as development continues.
+
+---
+
+## 🎯 Features
+
+### 👤 Patient Features
+* Secure registration and login
+* Browse doctors and book appointments
+* View personal medical records
+* Submit contact inquiries
+
+### 🩺 Doctor Features
+* Manage appointments and schedules
+* Access patient records securely
+* Update availability
+
+### 🛡️ Admin Features
+* User and doctor management
+* Oversee appointments and inquiries
+* System-wide controls and logs
+
+### 🔒 Security & Design
+* CSRF protection and password hashing
+* Responsive, mobile-friendly UI with Tailwind CSS
+* Scalable database with audit logs
+
+### 🔜 Coming Soon
+* Email notifications for appointments
+* Integration with payment gateways
+* Advanced analytics dashboard
+* Mobile app companion
+
+---
+
+## 🛠 Tech Stack
+
+| Layer      | Technologies                          |
+|------------|---------------------------------------|
+| Backend    | PHP, MySQL, Composer                  |
+| Frontend   | HTML5, Tailwind CSS, Font Awesome     |
+| Database   | MySQL with Migrations                 |
+| Security   | CSRF Tokens, Bcrypt Hashing           |
+| Tools      | Git, Apache/Nginx, PDO                |
+
+---
+
+## 📁 Project Structure
+
+```bash
+hospital-management-system/
+├── public/
+│   ├── assets/
+│   ├── css/
+│   ├── js/
+│   └── index.php
+├── src/
+│   ├── controllers/
+│   ├── models/
+│   ├── views/
+│   └── utils/
+├── sql/
+│   └── schema.sql
+├── storage/
+│   ├── logs/
+│   └── uploads/
+├── .env.example
+├── composer.json
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# Clone project
+git clone https://github.com/developer-abdiweli-jama/hospital-management-system.git
+cd hospital-management-system
+```
+
+### Backend Setup
+
+```bash
+composer install
+cp .env.example .env
+```
+
+Update `.env` with your database credentials.
+
+### Database Setup
+
+```bash
+mysql -u root -p hospital_db < sql/schema.sql
+```
+
+### Storage Setup
+
+```bash
+mkdir -p storage/logs storage/uploads
+chmod 777 storage/logs storage/uploads
+```
+
+---
+
+## 🔑 Environment Variables
+
+```env
+DB_HOST=localhost
+DB_NAME=hospital_db
+DB_USER=root
+DB_PASS=your_secure_password
+DB_CHARSET=utf8mb4
+APP_ENV=development
+APP_DEBUG=true
+```
+
+---
+
+## 🚀 Running the App
+
+### Using Built-in Server
+
+```bash
+php -S localhost:8000 -t public
+```
+
+### With Apache/Nginx
+Configure your web server to serve the `public/` directory as the document root.
+
+Access at `http://localhost:8000`. Use default credentials (update in `schema.sql`):
+- Admin: `admin@hospital.com` / `password123`
+- Doctor: `afework@hospital.com` / `password123`
+- Patient: `patient@hospital.com` / `password123`
+
+---
+
+## 🛤 Roadmap
+
+| Status | Feature                  | ETA      |
+|--------|--------------------------|----------|
+| ✅     | Core dashboards          | Live    |
+| ✅     | Appointment booking      | Dec 2025|
+| 🔄    | Email notifications      | Jan 2026|
+| 🔄    | Payment integration      | Jan 2026|
+| ⏳    | Analytics dashboard      | Feb 2026|
+| ⏳    | Mobile responsiveness    | Q1 2026 |
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create a branch (`git checkout -b feat/add-feature`)
+3. Commit (`git commit -m 'add: new feature'`)
+4. Push and create a PR
+
+---
+
+## 🎥 Tutorial Reference
+
+Project inspired by modern PHP best practices and hospital management needs.
+
+---
+
+## 👤 Author
+
+**Abdiweli Jama Abdullahi**  
+Full-Stack Developer • HIRGAL NEXUS  
+* GitHub: [https://github.com/developer-abdiweli-jama](https://github.com/developer-abdiweli-jama)  
+* LinkedIn: [https://www.linkedin.com/in/abdiweli-jamac-60ab44207](https://www.linkedin.com/in/abdiweli-jamac-60ab44207)  
+* Email: [abdiwelijama@gmail.com](mailto:abdiwelijama@gmail.com)
+
+<p align="center"><strong>⭐ Star this project if you like it!</strong></p>
