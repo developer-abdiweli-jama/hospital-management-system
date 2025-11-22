@@ -46,15 +46,15 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="https://dummyimage.com/1600x900/0f172a/ffffff&text=Home+Page+%E2%80%94+Dark+Mode+Coming+Soon" width="100%" />
+  <img src="public/assets/images/Home Page.png " width="100%" />
 </p>
 
 <p align="center">
-  <img src="https://dummyimage.com/1600x900/0f172a/ffffff&text=Appointment+Booking+Flow" width="100%" />
+  <img src="public/assets/images/Patient Dashboard.png" width="100%" />
 </p>
 
 <p align="center">
-  <img src="https://dummyimage.com/1600x900/0f172a/ffffff&text=Admin+Dashboard+%E2%80%94+Manage+Users+%26+Records" width="100%" />
+  <img src="public/assets/images/Admin Dashboard.png" width="100%" />
 </p>
 
 > ⚡ Real screenshots and GIFs will be added as development continues.
